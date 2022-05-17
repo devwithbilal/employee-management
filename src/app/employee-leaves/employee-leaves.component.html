@@ -1,0 +1,24 @@
+<sidenav></sidenav>
+<div class="maindev">
+    <table class="table">
+        <thead class="table-header">
+            <h1>Employee Leaves</h1>
+          <tr>
+            <th scope="col">User Name</th>
+            <th scope="col">TOTAL LEAVES</th>
+            <th scope="col">REMAINING LEAVES</th>
+            <th scope="col">CONSUME LEAVES</th>
+            <th scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of employeeLeaves;">
+            <td>{{item.userName}}</td>
+            <td>{{item.totalLeaves}}</td>
+            <td>{{item.consumeLeaves}}</td>
+            <td>{{item.remainingLeaves}}</td>
+            <td><button>Edit</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

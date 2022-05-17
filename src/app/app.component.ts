@@ -1,4 +1,6 @@
+import { getLocaleDateFormat } from '@angular/common';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'new-project';
+  title = 'Employee Management Application';
+ 
+  constructor(){
+    
+  }
+
 }

@@ -1,0 +1,10 @@
+.maindev{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin: 50px 150px 50px auto;
+}
+h1{
+    font-size: 30px;
+    font-weight: 800;
+}

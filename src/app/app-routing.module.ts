@@ -9,11 +9,10 @@ import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.compo
 
 const routes: Routes = [
   { path: '', component: EmployeeLoginComponent },
-  { path: 'EmployeeLoginComponent', component: EmployeeLoginComponent },
-  { path: 'EmployeeRegisterComponent', component: EmployeeRegisterComponent },
-  { path: 'SidenavComponent', component: SidenavComponent},
-  { path: 'EmployeeLeavesComponent', component: EmployeeLeavesComponent},
-  { path: 'EmployeeForgotComponent', component: EmployeeForgotComponent},
+  { path: 'employeelogin', component: EmployeeLoginComponent },
+  { path: 'employeeregister', component: EmployeeRegisterComponent },
+  { path: 'employeeleaves', component: EmployeeLeavesComponent},
+  { path: 'employeeforgot', component: EmployeeForgotComponent},
   { path: '**', component: PageNotFoundComponent }
 
 ];

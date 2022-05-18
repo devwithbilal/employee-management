@@ -1,3 +1,4 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeLeaves } from '../core/models/employee-leaves';
 
@@ -10,6 +11,7 @@ export class EmployeeLeavesComponent implements OnInit {
 
   employeeLeaves : EmployeeLeaves[] = [];
   indentity: number = 1;
+  isEdit: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -17,6 +19,7 @@ export class EmployeeLeavesComponent implements OnInit {
     this.setEmployeeLeaves("Ali",5,25);
     this.setEmployeeLeaves("Kashan", 15,25);
     console.log("employeeLeave", this.employeeLeaves)
+
   }
 
   setEmployeeLeaves(userName: string, consumeLeaves: number, totalLeaves: number){
@@ -25,12 +28,20 @@ export class EmployeeLeavesComponent implements OnInit {
       totalLeaves : totalLeaves,
       remainingLeaves : totalLeaves - consumeLeaves,
       userName : userName,
-      id : this.indentity
+      id : this.indentity,
+      isEdit: false
     }
     this.employeeLeaves.push(employeeLeave);
     this.indentity++;
+    
+  }
+  onEdit(){
+    this.isEdit; true
   }
 
+  // edit():void {
+  //   this.
+  // }
 
 
 }

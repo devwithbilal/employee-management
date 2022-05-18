@@ -14,10 +14,12 @@
         <tbody>
           <tr *ngFor="let item of employeeLeaves;">
             <td>{{item.userName}}</td>
-            <td>{{item.totalLeaves}}</td>
+            <td>   
+              <input [(ngModel)]="item.totalLeaves" *ngIf="item.isEdit"  type="text"> 
+              <span *ngIf="!item.isEdit">{{item.totalLeaves}}</span></td>
             <td>{{item.consumeLeaves}}</td>
             <td>{{item.remainingLeaves}}</td>
-            <td><button>Edit</button></td>
+            <td><button *ngFor="! onEdit" (click)="onEdit()">Edit</button></td>
           </tr>
         </tbody>
       </table>

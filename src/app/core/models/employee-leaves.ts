@@ -4,4 +4,5 @@ export class EmployeeLeaves {
     consumeLeaves: number | undefined;
     userName: string | undefined;
     id: number | undefined;
+    isEdit: boolean | undefined
 }

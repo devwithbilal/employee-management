@@ -1,5 +1,4 @@
 <sidenav></sidenav>>
-<h1>Employee Management Application</h1>
 <div class="formcontainer">
   <h2>LOGIN FORM</h2>
   <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
@@ -18,7 +17,7 @@
       <button class="btn btn-dark" [disabled]="loginForm.invalid" type="submit">LOGIN</button>
       &nbsp;
       &nbsp;
-      <a class="btn btn-outline-dark" routerLink="/EmployeeRegisterComponent" routerLinkActive="active">Registration Form</a>
+      <a class="btn btn-outline-dark" routerLink="/employeeregister" routerLinkActive="active">Registration Form</a>
     </section>
   </form>
 </div>

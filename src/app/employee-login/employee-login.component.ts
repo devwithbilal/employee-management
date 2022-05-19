@@ -28,10 +28,15 @@ export class EmployeeLoginComponent implements OnInit {
     this.IsLogin = this.auth.login(data.name , data.password)
 
     if(this.IsLogin === true){
-        console.log('login Successfully')
+        console.log("login Successfully")
+
+        alert(" You have been login Successfully")
     }
     else{
-      console.log('login failed')
+      console.log("Login Failed")
+
+      alert(" Login Failed")
+
     }
   }
   

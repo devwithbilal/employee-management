@@ -8,3 +8,15 @@ h1{
     font-size: 30px;
     font-weight: 800;
 }
+
+.invalid-field{
+    border: 2px solid #d7414f !important;
+}
+.valid-field{
+    border: 2px solid green !important;
+}
+.invalid-title{
+    font-weight: 500;
+    color: #d7414f;
+    margin-left: -16px;
+}

@@ -6,20 +6,38 @@
           <tr>
             <th scope="col">User Name</th>
             <th scope="col">TOTAL LEAVES</th>
-            <th scope="col">REMAINING LEAVES</th>
             <th scope="col">CONSUME LEAVES</th>
+            <th scope="col">REMAINING LEAVES</th>
             <th scope="col">ACTION</th>
           </tr>
         </thead>
         <tbody>
+
+          
           <tr *ngFor="let item of employeeLeaves;">
             <td>{{item.userName}}</td>
-            <td>   
-              <input [(ngModel)]="item.totalLeaves" *ngIf="item.isEdit"  type="text"> 
-              <span *ngIf="!item.isEdit">{{item.totalLeaves}}</span></td>
-            <td>{{item.consumeLeaves}}</td>
-            <td>{{item.remainingLeaves}}</td>
-            <td><button *ngFor="! onEdit" (click)="onEdit()">Edit</button></td>
+            <td>
+              <span>{{item.totalLeaves}}</span>
+            </td>
+            <td>
+              <span *ngIf="item.isEdit">
+                <input [ngClass]="[item.isValid ? 'valid-field' : 'invalid-field']" [(ngModel)]="item.consumeLeaves"   type="number" maxlength="2" max="25">
+                <br>
+                <small class="invalid-title" *ngIf="!item.isValid">*Please Select Valid Consume Leave</small>
+              </span>
+              
+              <span *ngIf="!item.isEdit">{{item.consumeLeaves}}</span>
+            </td>
+            <td>
+              <input [(ngModel)]="item.remainingLeaves" disabled="" type="number" >
+            </td>
+            <td>
+              <button *ngIf="!item.isEdit" type="button" (click)="onEdit(item)">Edit</button>
+                <span *ngIf="item.isEdit">
+                  <button  type="button" (click)="onSave(item)">Save</button> &nbsp;
+                  <button  type="button" (click)="onCancel(item)">Cancel</button>
+                </span>
+            </td>
           </tr>
         </tbody>
       </table>

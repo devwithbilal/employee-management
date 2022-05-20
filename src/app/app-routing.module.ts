@@ -13,6 +13,8 @@ const routes: Routes = [
   { path: 'employeeregister', component: EmployeeRegisterComponent },
   { path: 'employeeleaves', component: EmployeeLeavesComponent},
   { path: 'employeeforgot', component: EmployeeForgotComponent},
+
+  
   { path: '**', component: PageNotFoundComponent }
 
 ];

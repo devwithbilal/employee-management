@@ -8,6 +8,7 @@ import { AuthService } from '../Auth.service';
   styleUrls: ['./employee-login.component.css']
 })
 export class EmployeeLoginComponent implements OnInit {
+  router: any;
 
   // loginUser(item:any)
   // {
@@ -28,9 +29,11 @@ export class EmployeeLoginComponent implements OnInit {
     this.IsLogin = this.auth.login(data.name , data.password)
 
     if(this.IsLogin === true){
-        console.log("login Successfully")
+      console.log("login Successfully")
+      alert(" You have been login Successfully")
+        
 
-        alert(" You have been login Successfully")
+                
     }
     else{
       console.log("Login Failed")

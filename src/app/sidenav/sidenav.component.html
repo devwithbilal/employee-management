@@ -11,9 +11,14 @@
 </div>
 
 <div class="sidebar">
-    <mat-drawer #drawer class="innersidebar" mode="side" value="puch" >
-        <h2><a routerLink="/employeelogin" routerLinkActive="active">employeelogin</a></h2>
-        <h2><a routerLink="/employeeregister" routerLinkActive="active">employeeregister</a></h2>
-        <h2><a routerLink="/employeeleaves" routerLinkActive="active">employeeleaves</a></h2>
+    <mat-drawer #drawer class="innersidebar" mode="side" value="puch">
+        <div class="abcd">
+            <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeelogin"
+                routerLinkActive="active">LOGIN</a>
+            <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeeregister"
+                routerLinkActive="active">REGISTER</a>
+            <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeeleaves"
+                routerLinkActive="active">LEAVES</a>
+        </div>
     </mat-drawer>
 </div>

@@ -9,10 +9,11 @@ export class AuthService {
   constructor() { }
   users = [
     { name: "bilal", password: "12345"},
-    { name: "abc", password: "12345"},
-    { name: "xyz", password: "12345"},
+    { name: "ali", password: "12345"},
+    { name: "kashan", password: "12345"},
 
   ]
+  
 
 
   login(name: string, password: string) {
@@ -30,8 +31,4 @@ export class AuthService {
   register(name :string , password:string){
     this.users.push({name:name , password:password})
   }
-
-
-
-
 }

@@ -1,35 +1,71 @@
-.header{
-    background-color:floralwhite;
-    position: relative;
-    width: 100%;
-    padding: 15px;
-    display: flex;
+.header {
+  background-color: #005555;
+  position: relative;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  border-bottom: 2px solid white;
+  z-index: 1;
 }
-.div1{
-  width: 25%;
-}
-.div2{
-  width: 50%;
-}
-.div3{
+
+.div1 {
   width: 25%;
 }
 
+.div2 {
+  width: 50%;
+}
+
+.div3 {
+  width: 25%;
+}
+
+.abcd {
+  display: flex;
+  flex-direction: column;
+
+}
+
 .innersidebar {
-    
+
     width: 250px;
     height: 100%;
     position: absolute;
-    background-color: floralwhite;
-    padding: 100px 30px 35px 30px;
+    background-color: #005555;
+    padding: 100px 25px 35px 25px;
+    transition: 0.5s;
+    
 }
-button{
-    padding: 5px;
-    background-color: unset;
-    font-size:  25px;
-    border: 0;
+
+
+.mat-drawer-inner-container.ng-tns-c65-0 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-H1{
-    text-align: center;
-    margin: 0;
-  }
+
+button {
+  padding: 5px;
+  background-color: unset;
+  font-size: 25px;
+  border: 0;
+  color: #ffff;
+}
+
+H1 {
+  text-align: center;
+  margin: 0;
+  color: #f9fafb;
+}
+
+a {
+  margin-bottom: 8px;
+  color: #005555;
+  font-weight: 500;
+}
+
+.btn-light:hover {
+  color: #ffff;
+  border-color: #f9fafb;
+  background-color: #005555;
+}

@@ -86,8 +86,4 @@ export class EmployeeLeavesComponent implements OnInit {
     item.totalLeaves = data.totalLeaves;
     item.remainingLeaves = data.remainingLeaves;
   }
-
-  
-
-
 }

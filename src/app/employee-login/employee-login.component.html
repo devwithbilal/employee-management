@@ -4,13 +4,13 @@
   <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
     <div class="inputdiv">
       <input type="text" minlength="3" required #name="ngModel" name="name" placeholder="Enter your Name" ngModel>
-      <span *ngIf="name.invalid && name.touched" style="color: red;">please enter atleast 3 character with your valid
+      <span *ngIf="name.invalid && name.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with your valid
         name</span>
     </div>    
     <div class="inputdiv">
       <input type="password" minlength="3" required #password="ngModel" name="password" placeholder="Enter your Password"
         ngModel>
-      <span *ngIf="password.invalid && password.touched" style="color: red;">please enter atleast 3 character with your
+      <span *ngIf="password.invalid && password.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with your
         valid password</span>
     </div>    
     <section>

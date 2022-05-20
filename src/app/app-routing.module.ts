@@ -7,6 +7,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.component';
 
+
+
 const routes: Routes = [
   { path: '', component: EmployeeLoginComponent },
   { path: 'employeelogin', component: EmployeeLoginComponent },

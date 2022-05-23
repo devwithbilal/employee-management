@@ -1,11 +1,12 @@
 .formcontainer{
     width: 30%;
-    background-color: floralwhite;
+    background-color: #e4e4e4;
     padding: 25px;
     margin-top: 15px;
     border: 0px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 25px;
   }
 
 .inputdiv{
@@ -19,6 +20,8 @@ input{
     margin-right: auto;
     margin-left: auto;
     width: 60%;
+    padding:  5px 5px 5px 5px;
+    border-radius: 7px;
 }
 h1{
   text-align: center;
@@ -26,6 +29,7 @@ h1{
 }
 h2{
   text-align: center;
+  font-size: 25px;
   margin: 30px;
 }
 span{
@@ -34,6 +38,7 @@ span{
 }
 
 section{
+  padding-top: 10px;
   display: flex;
   justify-content: center;
   margin: 0;

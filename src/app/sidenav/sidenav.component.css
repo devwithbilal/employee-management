@@ -36,7 +36,9 @@
     transition: 0.5s;
     
 }
-
+button.btncls{
+  font-size: 15px;
+}
 
 .mat-drawer-inner-container.ng-tns-c65-0 {
   display: flex;

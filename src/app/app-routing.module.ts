@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.component';
+import { AuthenticationGuard } from './core/authentication/authentication.guard';
 
 
 
@@ -13,12 +14,11 @@ const routes: Routes = [
   { path: '', component: EmployeeLoginComponent },
   { path: 'employeelogin', component: EmployeeLoginComponent },
   { path: 'employeeregister', component: EmployeeRegisterComponent },
-  { path: 'employeeleaves', component: EmployeeLeavesComponent},
+  { path: 'employeeleaves', component: EmployeeLeavesComponent, canActivate: [AuthenticationGuard]},
   { path: 'employeeforgot', component: EmployeeForgotComponent},
 
   
   { path: '**', component: PageNotFoundComponent }
-
 ];
 
 @NgModule({

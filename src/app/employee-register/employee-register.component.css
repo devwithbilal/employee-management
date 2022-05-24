@@ -1,4 +1,4 @@
-.formcontainer{
+.formcontainer {
   width: 30%;
   background-color: #e4e4e4;
   padding: 25px;
@@ -7,47 +7,52 @@
   margin-left: auto;
   margin-right: auto;
   border-radius: 25px;
-  }
+}
 
-  .inputdiv{
-    margin: 15px 0px 20px 0px;
-  }
+.inputdiv {
+  margin: 15px 0px 20px 0px;
+}
 
-  input{
+input {
 
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    width: 60%;
-    padding:  5px 5px 5px 5px;
-    border-radius: 7px;
-  }
-  h1{
-    text-align: center;
-    margin: 50px;
-  }
-  h2{
-    text-align: center;
-    font-size: 25px;
-    margin: 30px;
-  }
-  span{
-    padding-bottom: 15px;
-  
-  }
-  button{
-    margin: 5px 3px 5px 3px;
-  }
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+  padding: 5px 5px 5px 5px;
+  border-radius: 7px;
+  border: 2px solid lightgray;
+}
 
-  a{
-    margin: 5px 3px 5px 3px;
-  }
+h1 {
+  text-align: center;
+  margin: 50px;
+}
 
-  section{
-    padding-top: 10px;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    
-  }
+h2 {
+  text-align: center;
+  font-size: 25px;
+  margin: 30px;
+}
+
+span {
+  padding-bottom: 15px;
+
+}
+
+button {
+  margin: 5px 3px 5px 3px;
+}
+
+a {
+  margin: 5px 3px 5px 3px;
+}
+
+section {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+
+}

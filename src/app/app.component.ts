@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'Employee Management Application';
  
   constructor(){
-    
+
   }
 
 }

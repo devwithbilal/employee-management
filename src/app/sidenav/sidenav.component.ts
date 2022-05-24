@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../Auth.service';
+import { EmployeeLoginComponent } from '../employee-login/employee-login.component';
+
+
 
 
 @Component({
@@ -9,10 +14,19 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavComponent implements OnInit {
   showFiller = false;
 
-  constructor() { }
+
+  constructor (private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  
+Logout() {
+    localStorage.clear();
+    this.router.navigateByUrl("/employeelogin");
+}
+
+
 
 
 }

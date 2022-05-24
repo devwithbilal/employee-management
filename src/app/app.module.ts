@@ -16,10 +16,6 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.component';
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +25,6 @@ import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.compo
     SidenavComponent,
     EmployeeLeavesComponent,
     EmployeeForgotComponent,
-    
     ],
   imports: [
     BrowserModule,
@@ -40,7 +35,6 @@ import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.compo
     MatSlideToggleModule,
     MatSliderModule,
     MatSidenavModule
-    
     
   ],
   providers: [],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, ROUTES } from '@angular/router';
 import { elementAt } from 'rxjs';
 import { AuthService } from '../Auth.service';
 
@@ -8,40 +9,30 @@ import { AuthService } from '../Auth.service';
   styleUrls: ['./employee-login.component.css']
 })
 export class EmployeeLoginComponent implements OnInit {
-  router: any;
 
-  // loginUser(item:any)
-  // {
-  //   console.warn(item);
-    
-  // }
 
-  constructor(private auth:AuthService ) {}
+  constructor(private auth: AuthService, private router: Router) {
 
-  
+  }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {} 
+  IsLogin = false;
 
-  IsLogin=false;
-  
-  loginUser(data:any){
+  loginUser(data: any) {
 
-    this.IsLogin = this.auth.login(data.name , data.password)
+    this.IsLogin = this.auth.login(data.name, data.password)
 
-    if(this.IsLogin === true){
-      console.log("login Successfully")
-      alert(" You have been login Successfully")
-        
-
-                
+    if (this.IsLogin === true) {
+      console.log("this.router", this.router)
+      this.router.navigateByUrl("/employeeleaves");
+      alert("You have been login Successfully")
     }
-    else{
+    else {
       console.log("Login Failed")
-
       alert(" Login Failed")
-
     }
   }
-  
+
+
 
 }

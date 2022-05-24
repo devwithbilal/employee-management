@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Router, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { AuthService } from '../Auth.service';
+import { AuthService } from '../../Auth.service';
 import { Observable } from 'rxjs';
 
 
@@ -9,19 +9,29 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationGuard implements CanActivate {
+  LocalStorageService: any;
   constructor(
     public router: Router,
-    public authservice:AuthService ) { }
+    public authservice: AuthService,
+  ) { }
+
+
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (AuthService.getItem('users') == null) {
-      this.router.navigate(['employeeleaves']);
-      console.log('AuthService'this.authservice);
+
+
+    console.log("localStorage.getItem('login')",localStorage.getItem('login'))
+    if (localStorage.getItem('login')) {
       return true;
     }
-    this.router.navigate(['employeelogin']);
+    this.router.navigateByUrl('employeelogin');
     return false;
   }
 }
+
+
+
+
+

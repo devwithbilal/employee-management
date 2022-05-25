@@ -24,7 +24,9 @@ export class EmployeeLeavesComponent implements OnInit {
     this.setEmployeeLeaves("Bilal", 10, 25,true);
     this.setEmployeeLeaves("Ali",5,25,false);
     this.setEmployeeLeaves("Kashan", 15,25,false);
-    console.log("employeeLeave", this.employeeLeaves)
+    // console.log("employeeLeave", this.employeeLeaves)
+
+
     // const myClonedArray  = Object.assign([], this.allEmployeeLeaves);
     // let newArray = this.allEmployeeLeaves.slice();
     // const itemsCopy = [...newArray];
@@ -63,7 +65,7 @@ export class EmployeeLeavesComponent implements OnInit {
     
     const data = this.allEmployeeLeaves.find(x=>x.id === item.id) as EmployeeLeaves;
     if(item.consumeLeaves > item.totalLeaves || item.consumeLeaves < data.consumeLeaves){
-      console.log("YES");
+      // console.log("YES");
       item.isValid = false;
       return;
     }

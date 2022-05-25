@@ -1,7 +1,7 @@
 export class EmployeeLeaves {
-    static assign(arg0: {}, employeeLeave: any) {
-      throw new Error('Method not implemented.');
-    }
+    // static assign(arg0: {}, employeeLeave: any) {
+    //   throw new Error('Method not implemented.');
+    // }
     totalLeaves: number  = 0;
     remainingLeaves: number  = 0;
     consumeLeaves: number  = 0;

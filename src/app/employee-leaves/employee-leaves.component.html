@@ -2,9 +2,8 @@
 <div class="maindev">
     <table class="table">
         <thead class="table-header">
-            <h1>Employee Leaves</h1>
           <tr>
-            <th scope="col">User Name</th>
+            <th scope="col">EMPLOYEE NAME</th>
             <th scope="col">TOTAL LEAVES</th>
             <th scope="col">CONSUME LEAVES</th>
             <th scope="col">REMAINING LEAVES</th>
@@ -32,10 +31,10 @@
               <input [(ngModel)]="item.remainingLeaves" disabled="" type="number" >
             </td>
             <td>
-              <button *ngIf="!item.isEdit" type="button" (click)="onEdit(item)">Edit</button>
+              <button *ngIf="!item.isEdit" type="button" (click)="onEdit(item)" class="btn btn-dark" >Edit</button>
                 <span *ngIf="item.isEdit">
-                  <button  type="button" (click)="onSave(item)">Save</button> &nbsp;
-                  <button  type="button" (click)="onCancel(item)">Cancel</button>
+                  <button  type="button" (click)="onSave(item)" class="btn btn-dark" >Save</button> &nbsp;
+                  <button  type="button" (click)="onCancel(item)" class="btn btn-dark" >Cancel</button>
                 </span>
             </td>
           </tr>

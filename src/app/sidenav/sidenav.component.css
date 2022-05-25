@@ -41,6 +41,8 @@ span#menu{
   font-size: 30px;
   padding: 5px;
   cursor: pointer;
+  background-color: #dbdbdb;
+
 }
 
 span#logout{
@@ -49,6 +51,9 @@ span#logout{
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
+  background-color: #dbdbdb;
+  width: 40px;
+  margin-left: auto;
 }
 
 
@@ -73,12 +78,12 @@ H1 {
 
 a {
   margin-bottom: 8px;
-  color: #005555;
+  color: #212529;
   font-weight: 500;
 }
 
 .btn-light:hover {
   color: #ffff;
   border-color: #f9fafb;
-  background-color: #005555;
+  background-color: #212529;
 }

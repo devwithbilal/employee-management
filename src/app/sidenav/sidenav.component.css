@@ -1,10 +1,10 @@
 .header {
-  background-color: #005555;
+  background-color: #e4e4e4;
   position: relative;
   width: 100%;
   padding: 15px;
   display: flex;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid black;
   z-index: 1;
 }
 
@@ -31,14 +31,26 @@
     width: 250px;
     height: 100%;
     position: absolute;
-    background-color: #005555;
+    background-color: #e4e4e4;
     padding: 100px 25px 35px 25px;
     transition: 0.5s;
+    border-right: 2px solid black;
     
 }
-button.btncls{
-  font-size: 15px;
+span#menu{
+  font-size: 30px;
+  padding: 5px;
+  cursor: pointer;
 }
+
+span#logout{
+  font-size: 30px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+}
+
 
 .mat-drawer-inner-container.ng-tns-c65-0 {
   display: flex;
@@ -49,15 +61,14 @@ button.btncls{
 button {
   padding: 5px;
   background-color: unset;
-  font-size: 25px;
+  font-size: 30px;
   border: 0;
-  color: #ffff;
 }
 
 H1 {
   text-align: center;
+  font-weight: 500;
   margin: 0;
-  color: #f9fafb;
 }
 
 a {

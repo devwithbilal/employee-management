@@ -23,7 +23,7 @@ export class EmployeeLoginComponent implements OnInit {
     this.IsLogin = this.auth.login(data.name, data.password)
 
     if (this.IsLogin === true) {
-      console.log("this.router", this.router)
+      // console.log("this.router", this.router)
       this.router.navigateByUrl("/employeeleaves");
       alert("You have been login Successfully")
     }

@@ -1,12 +1,13 @@
 .formcontainer{
-    width: 30%;
+    width: 500px;
     background-color: #e4e4e4;
-    padding: 25px;
-    margin-top: 15px;
-    border: 0px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 30px;
+    margin:auto;
+    border: 2px solid black ;
     border-radius: 25px;
+    position: absolute;
+    top: 200px;
+    left: 550px;
   }
 
 .inputdiv{
@@ -19,7 +20,7 @@ input{
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    width: 60%;
+    width: 300px;
     padding:  5px 5px 5px 5px;
     border-radius: 7px;
     border: 2px solid lightgray;

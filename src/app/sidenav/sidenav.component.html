@@ -1,26 +1,22 @@
 <div class="header">
     <div class="div1">
-        <button type="button" mat-button (click)="drawer.toggle()">&#9776;</button>
+        <span id="menu" class='material-icons' (click)="drawer.toggle()" >menu</span>
     </div>
     <div class="div2">
         <h1>Employee Management Application</h1>
     </div>
     <div class="div3">
-
-        <button class="btncls" value="logout" (click)="Logout()">LOGOUT</button>
-
+        <span id="logout" class="material-icons"  (click)="Logout()" >logout</span>
     </div>
 </div>
 
 <div class="sidebar">
     <mat-drawer #drawer class="innersidebar" mode="side" value="puch">
         <div class="abcd">
-            <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeelogin"
-                routerLinkActive="active">LOGIN</a>
-            <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeeregister"
-                routerLinkActive="active">REGISTER</a>
             <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeeleaves"
                 routerLinkActive="active">LEAVES</a>
+            <a class="btn btn-light" data-mdb-color="dark" routerLink="/employeetask"
+                routerLinkActive="active">Task</a>
         </div>
     </mat-drawer>
 </div>

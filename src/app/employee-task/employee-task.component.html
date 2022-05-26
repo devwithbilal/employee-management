@@ -7,23 +7,31 @@
         <thead class="table-header">
             <tr>
                 <td scope="col"><b>TASK-ID</b></td>
+                <td scope="col"><b>USERNAME</b></td>
                 <td scope="col"><b>TASK NAME</b></td>
                 <td scope="col"><b>CREATE AT</b></td>
                 <td scope="col"><b>STATUS</b></td>
+                <td scope="col"><b>ACTION</b></td>
             </tr>
         </thead>
         <tbody>
-            <tr >
-                <td>{{id}}</td>
-                <td>{{userName}}</td>
-                <td>{{ createdAt | date:'short' }}</td>
+            <tr *ngFor="let data of employeeTasks">
+                <td>{{data.id}}</td>
+                <td>{{data.userName}}</td>
+                <td>{{data.taskName}}</td>
+                <td>{{data.createdAt|date:'medium'}}</td>
                 <td>
-                    <select name="" id="">
-                        <option value="">Assigned</option>
-                        <option value="">InProgress</option>
-                        <option value="">Hold</option>
-                        <option value="">Completed</option>
-                    </select> 
+                    <span>
+                        <select [(ngModel)]="data.status">
+                            <option  *ngFor="let option of Options" [selected]="option === data.status" [value]="option">
+                                {{ option }}
+                            </option>
+                        </select>
+                    </span>
+
+                </td>
+                <td>
+                    <button type="button" (click)="onEdit(data)" >ASSIGN TASK</button>
                 </td>
             </tr>
         </tbody>

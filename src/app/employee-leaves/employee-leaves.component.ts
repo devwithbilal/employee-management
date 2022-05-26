@@ -52,6 +52,8 @@ export class EmployeeLeavesComponent implements OnInit {
   }
   onEdit(employeeLeave : EmployeeLeaves) {
     employeeLeave.isEdit = true;
+
+    console.log('onEdit',employeeLeave);
   }
 
   onSave(item : EmployeeLeaves) {

@@ -20,7 +20,7 @@
             </td>
             <td>
               <span *ngIf="item.isEdit">
-                <input [ngClass]="[item.isValid ? 'valid-field' : 'invalid-field']" [(ngModel)]="item.consumeLeaves"   type="number" maxlength="2" min="0" max="25">
+                <input [ngClass]="[item.isValid ? 'valid-field' : 'invalid-field']" [(ngModel)]="item.consumeLeaves"   type="number" maxlength="2"  max="25">
                 <br>
                 <small class="invalid-title" *ngIf="!item.isValid">*Please Select Valid Consume Leave</small>
               </span>
@@ -31,10 +31,10 @@
               <input [(ngModel)]="item.remainingLeaves" disabled="" type="number" >
             </td>
             <td>
-              <button *ngIf="!item.isEdit" type="button" (click)="onEdit(item)" class="btn btn-dark" >Edit</button>
+              <button *ngIf="!item.isEdit" type="button" (click)="onEdit(item)" class="btn1" >Edit</button>
                 <span *ngIf="item.isEdit">
-                  <button  type="button" (click)="onSave(item)" class="btn btn-dark" >Save</button> &nbsp;
-                  <button  type="button" (click)="onCancel(item)" class="btn btn-dark" >Cancel</button>
+                  <button  type="button" (click)="onSave(item)" class="btn2" >Save</button> &nbsp;
+                  <button  type="button" (click)="onCancel(item)" class="btn3" >Cancel</button>
                 </span>
             </td>
           </tr>

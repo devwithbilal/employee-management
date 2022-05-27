@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { data } from 'autoprefixer';
-import { identity } from 'rxjs';
+import { count, identity } from 'rxjs';
 import { EmployeeLeaves } from '../core/models/employee-leaves';
 import { EmployeeTask } from '../core/models/employee-task';
 
@@ -30,6 +30,7 @@ export class EmployeeTaskComponent implements OnInit {
     this.setEmployeeTask('FURQAN', 'login task', this.createdAt, 'Hold');
     this.setEmployeeTask('JAMIL', 'form task', this.createdAt, 'Completed');
 
+
     // this.employeeTasks.pop();
     // console.log("employeeTasks",this.employeeTasks)
     // console.log("employeeTasks find",this.employeeTasks.find(x=>x.userName === 'bilal'))
@@ -43,29 +44,42 @@ export class EmployeeTaskComponent implements OnInit {
       taskName: taskName,
       createdAt: createdAt,
       status: status,
+      taskinput: false
     }
     // this.employeeTasks.push(employeeTask)
 
     // console.log('employeeTasks',employeeTask);
     // console.log("employeeTasks",this.employeeTasks)
 
+
+
     this.employeeTasks.push(employeeTask);
     this.indentity++;
-      // console.log('employeeTasks', employeeTask);
+    // console.log('employeeTasks', employeeTask);
   }
 
-
-
-  onEdit(employeeTask: EmployeeTask) {
-
-    console.log('onEdit',employeeTask);
+  onClick(employeeTasks: EmployeeTask) {
+    this.setEmployeeTask(employeeTasks.userName,employeeTasks.taskName,employeeTasks.createdAt,employeeTasks.status,);
+    // employeeTasks.taskinput = true;
+    console.log('onClick',employeeTasks);
   }
 
-
-
-
+  onEdit(employeeTasks: EmployeeTask){
+    employeeTasks.taskinput = true;
+  }
 
 }
+
+
+
+
+    // console.log('onClick',employeeTask);
+
+
+
+
+
+
 
 
 

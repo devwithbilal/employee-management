@@ -13,3 +13,11 @@
     padding: 10px;
 
 }
+.btn1{
+    padding: 4px 10px 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: white;
+    background: dimgrey;
+    border: 2px solid gray;
+}

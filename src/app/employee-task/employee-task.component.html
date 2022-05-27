@@ -1,24 +1,26 @@
 <sidenav></sidenav>
 <div class="mainsec">
-    <button class="btn btn-dark">New Task</button>
 </div>
 <div class="maintable">
     <table class="table">
         <thead class="table-header">
             <tr>
-                <td scope="col"><b>TASK-ID</b></td>
-                <td scope="col"><b>USERNAME</b></td>
-                <td scope="col"><b>TASK NAME</b></td>
-                <td scope="col"><b>CREATE AT</b></td>
-                <td scope="col"><b>STATUS</b></td>
-                <td scope="col"><b>ACTION</b></td>
+                <td scope="col"><strong>TASK-ID</strong></td>
+                <td scope="col"><strong>USERNAME</strong></td>
+                <td scope="col"><strong>TASK NAME</strong></td>
+                <td scope="col"><strong>CREATE AT</strong></td>
+                <td scope="col"><strong>STATUS</strong></td>
+                <td scope="col"><strong>ACTION</strong></td>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let data of employeeTasks">
                 <td>{{data.id}}</td>
                 <td>{{data.userName}}</td>
-                <td>{{data.taskName}}</td>
+                <td>
+                    <span *ngIf="! data.taskinput">{{data.taskName}}</span>
+                    <span> <input [(ngModel)]="data.taskName" *ngIf="data.taskinput" type="text"> </span>
+                </td>
                 <td>{{data.createdAt|date:'medium'}}</td>
                 <td>
                     <span>
@@ -31,7 +33,14 @@
 
                 </td>
                 <td>
-                    <button type="button" (click)="onEdit(data)" >ASSIGN TASK</button>
+                    <button  class="btn1" type="button" (click)="onClick(data)" >ASSIGN TASK</button>
+
+                    
+                </td>
+                <td>
+                    <button *ngIf="data.taskinput"  class="btn1" (click)="onClick(data)">
+                        edit
+                    </button>
                 </td>
             </tr>
         </tbody>

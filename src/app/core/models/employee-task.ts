@@ -7,4 +7,7 @@ export class EmployeeTask {
     createdAt: Date = new Date();
     status: string= "";
     id: number = 0;
+    taskinput: boolean = false;
+    
+
 }

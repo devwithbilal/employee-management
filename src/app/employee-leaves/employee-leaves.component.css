@@ -23,4 +23,30 @@ h1{
     color: #d7414f;
     margin-left: -16px;
 }
+.btn1{
+    padding: 4px 10px 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: white;
+    background: dimgrey;
+    border: 2px solid gray;
+}
+
+.btn2{
+    padding: 4px 10px 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: white;
+    background: dimgrey;
+    border: 2px solid gray;
+}
+
+.btn3{
+    padding: 4px 10px 4px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: white;
+    background: dimgrey;
+    border: 2px solid gray;
+}
 

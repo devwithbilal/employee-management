@@ -8,6 +8,10 @@ export class EmployeeTask {
     status: string= "";
     id: number = 0;
     taskinput: boolean = false;
+    btnshow: boolean = false;
+    btnsave: boolean = false;
+    
+
     
 
 }

@@ -38,9 +38,8 @@
                     
                 </td>
                 <td>
-                    <button *ngIf="data.taskinput"  class="btn1" (click)="onClick(data)">
-                        edit
-                    </button>
+                    <button *ngIf="data.btnshow"  class="btn1" (click)="onEdit(data)">edit</button>
+                    <span *ngIf="data.btnsave"><button  class="btn1" (click)="onSave(data)">save</button></span>
                 </td>
             </tr>
         </tbody>

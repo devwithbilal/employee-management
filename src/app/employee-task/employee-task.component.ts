@@ -44,7 +44,9 @@ export class EmployeeTaskComponent implements OnInit {
       taskName: taskName,
       createdAt: createdAt,
       status: status,
-      taskinput: false
+      taskinput: false,
+      btnshow: false,
+      btnsave: false,
     }
     // this.employeeTasks.push(employeeTask)
 
@@ -55,17 +57,32 @@ export class EmployeeTaskComponent implements OnInit {
 
     this.employeeTasks.push(employeeTask);
     this.indentity++;
+
     // console.log('employeeTasks', employeeTask);
   }
 
   onClick(employeeTasks: EmployeeTask) {
     this.setEmployeeTask(employeeTasks.userName,employeeTasks.taskName,employeeTasks.createdAt,employeeTasks.status,);
-    // employeeTasks.taskinput = true;
+    employeeTasks.btnshow = true;
+
     console.log('onClick',employeeTasks);
   }
 
   onEdit(employeeTasks: EmployeeTask){
     employeeTasks.taskinput = true;
+    employeeTasks.btnsave = true;
+    employeeTasks.btnshow = false;
+
+
+  
+    console.log('onEdit',employeeTasks);
+
+  }
+  onSave(employeeTasks: EmployeeTask){
+    employeeTasks.taskinput = false;
+    employeeTasks.btnsave = false;
+    employeeTasks.btnshow = true;
+
   }
 
 }

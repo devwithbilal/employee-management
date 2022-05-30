@@ -7,6 +7,7 @@ import { EmployeeTask } from '../core/models/employee-task';
 interface EmployeeData extends EmployeeTask{
   isNew: boolean,
   isEdit: boolean,
+
 }
 @Component({
   selector: 'employee-task',
@@ -28,22 +29,23 @@ export class EmployeeTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.setEmployeeTask('BILAL', 'validation task', this.createdAt, 'Assigned');
-    this.setEmployeeTask('ALI', 'leaves task', this.createdAt, 'InProgress');
+    this.setEmployeeTask('ALI', 'leaves task', this.createdAt, 'Assigned');
     this.setEmployeeTask('FURQAN', 'login task', this.createdAt, 'Hold');
-    this.setEmployeeTask('JAMIL', 'form task', this.createdAt, 'Completed');
+    this.setEmployeeTask('JAMIL', 'form task', this.createdAt, 'Assigned');
 
   //  console.log("identity",this.indentity)
   }
 
-  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, isEdit: boolean = false, isNew: boolean = false) {
+  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, isNew: boolean = false) {
     let employeeTask: EmployeeData = {
       id: !isNew ? this.indentity : this.newIdentity,
       userName: userName,
       taskName: taskName,
       createdAt: createdAt,
       status: status,
-      isEdit : isEdit,
       isNew : isNew,
+      isEdit : false,
+
       
   
     }
@@ -60,18 +62,23 @@ export class EmployeeTaskComponent implements OnInit {
 
   }
 
-  onAddNewTask(employeeTasks: EmployeeData) {
-    this.setEmployeeTask(employeeTasks.userName, employeeTasks.taskName, new Date(), employeeTasks.status,true);
-    employeeTasks.isEdit = false;
-
+  onAddNewTask(employeeTask: EmployeeData) {
+    this.setEmployeeTask(employeeTask.userName, employeeTask.taskName, new Date(), employeeTask.status,true);
 
   }
 
-  onEdit(employeeTasks: EmployeeData) {
+  onEdit(employeeTask: EmployeeData) {
+    employeeTask.isEdit = false;
+    employeeTask.isNew = true;
+
+
   }
 
   onSave(employeeTask: EmployeeData) {
+    employeeTask.isEdit = true;
+    employeeTask.isNew = false;
 
+    
     if(employeeTask.id < 0){
       employeeTask.id = this.indentity;
       this.indentity++;

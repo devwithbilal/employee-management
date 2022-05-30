@@ -4,6 +4,10 @@ import { count, identity } from 'rxjs';
 import { EmployeeLeaves } from '../core/models/employee-leaves';
 import { EmployeeTask } from '../core/models/employee-task';
 
+interface EmployeeData extends EmployeeTask{
+  isNew: boolean,
+  isEdit: boolean,
+}
 @Component({
   selector: 'employee-task',
   templateUrl: './employee-task.component.html',
@@ -12,11 +16,11 @@ import { EmployeeTask } from '../core/models/employee-task';
 
 export class EmployeeTaskComponent implements OnInit {
 
-  employeeTasks: EmployeeTask[] = [];
-  allTasks: EmployeeTask[]=[];
+  employeeTasks: EmployeeData[] = [];
   indentity: number = 1;
+  newIdentity: number = -1;
   createdAt: Date = new Date();
-  Options: string[] = ["Assigned", "InProgress", "Hold", "Completed"]
+  Options: string[] = ["Assigned", "InProgress", "Hold", "Completed"];
   selected: string = "Assign";
 
   constructor() {
@@ -31,47 +35,57 @@ export class EmployeeTaskComponent implements OnInit {
   //  console.log("identity",this.indentity)
   }
 
-  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, btnSave: boolean = false) {
-    let employeeTask: EmployeeTask = {
-      id: this.indentity,
+  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, isEdit: boolean = false, isNew: boolean = false) {
+    let employeeTask: EmployeeData = {
+      id: !isNew ? this.indentity : this.newIdentity,
       userName: userName,
       taskName: taskName,
       createdAt: createdAt,
       status: status,
-      taskInput: false,
-      btnEdit: false,
-      btnSave: btnSave,
+      isEdit : isEdit,
+      isNew : isNew,
+      
+  
     }
 
-    const myObject = Object.assign({}, employeeTask);
-    this.employeeTasks.push(myObject);
-    this.allTasks.push(employeeTask);
-    this.indentity++;
+    // const myObject = Object.assign({}, employeeTask);
+    // this.employeeTasks.push(myObject);
+    this.employeeTasks.push(employeeTask);
+    if(!isNew){
+      this.indentity++;
+    }else{
+      this.newIdentity--;
+    }
+    
 
   }
 
-  onAddNewTask(allTasks: EmployeeTask) {
-    this.setEmployeeTask(allTasks.userName, allTasks.taskName, allTasks.createdAt, allTasks.status,true);
-    allTasks.taskInput = true;
-  }
+  onAddNewTask(employeeTasks: EmployeeData) {
+    this.setEmployeeTask(employeeTasks.userName, employeeTasks.taskName, new Date(), employeeTasks.status,true);
+    employeeTasks.isEdit = false;
 
-  onEdit(employeeTasks: EmployeeTask) {
-    employeeTasks.taskInput = true;
-    employeeTasks.btnEdit = false;
-    employeeTasks.btnSave = true;
-  }
-
-  onSave(employeeTasks: EmployeeTask) {
-    employeeTasks.taskInput = false;
-    employeeTasks.btnEdit = true;
-    employeeTasks.btnSave = false;
 
   }
 
-  onCancel(employeeTasks: EmployeeTask){
-    employeeTasks.taskInput = false;
-    employeeTasks.btnSave = false;
+  onEdit(employeeTasks: EmployeeData) {
+  }
 
+  onSave(employeeTask: EmployeeData) {
+
+    if(employeeTask.id < 0){
+      employeeTask.id = this.indentity;
+      this.indentity++;
+    }
+    
+
+
+  }
+
+  onCancel(employeeTask: EmployeeData){
+    employeeTask.isEdit = false;
+    console.log("employeeTask",employeeTask)
+
+    this.employeeTasks = this.employeeTasks.filter(x=>x.id !== employeeTask.id);
 
 
   }

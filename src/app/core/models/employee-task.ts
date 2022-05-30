@@ -5,7 +5,4 @@ export class EmployeeTask {
     createdAt: Date = new Date();
     status: string = "";
     id: number = 0;
-    taskInput: boolean = false;
-    btnEdit: boolean = false;
-    btnSave: boolean = false;
 }

@@ -10,18 +10,16 @@ import { EmployeeTask } from '../core/models/employee-task';
   styleUrls: ['./employee-task.component.css']
 })
 
-
-
-
 export class EmployeeTaskComponent implements OnInit {
 
   employeeTasks: EmployeeTask[] = [];
+  allTasks: EmployeeTask[]=[];
   indentity: number = 1;
   createdAt: Date = new Date();
   Options: string[] = ["Assigned", "InProgress", "Hold", "Completed"]
+  selected: string = "Assign";
 
   constructor() {
-
   }
 
   ngOnInit(): void {
@@ -30,67 +28,55 @@ export class EmployeeTaskComponent implements OnInit {
     this.setEmployeeTask('FURQAN', 'login task', this.createdAt, 'Hold');
     this.setEmployeeTask('JAMIL', 'form task', this.createdAt, 'Completed');
 
-
-    // this.employeeTasks.pop();
-    // console.log("employeeTasks",this.employeeTasks)
-    // console.log("employeeTasks find",this.employeeTasks.find(x=>x.userName === 'bilal'))
-    // console.log("employeeTasks filter",this.employeeTasks.filter(x=>x.userName === 'bilal'))
+  //  console.log("identity",this.indentity)
   }
 
-  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string) {
+  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, btnSave: boolean = false) {
     let employeeTask: EmployeeTask = {
       id: this.indentity,
       userName: userName,
       taskName: taskName,
       createdAt: createdAt,
       status: status,
-      taskinput: false,
-      btnshow: false,
-      btnsave: false,
+      taskInput: false,
+      btnEdit: false,
+      btnSave: btnSave,
     }
-    // this.employeeTasks.push(employeeTask)
 
-    // console.log('employeeTasks',employeeTask);
-    // console.log("employeeTasks",this.employeeTasks)
-
-
-
-    this.employeeTasks.push(employeeTask);
+    const myObject = Object.assign({}, employeeTask);
+    this.employeeTasks.push(myObject);
+    this.allTasks.push(employeeTask);
     this.indentity++;
 
-    // console.log('employeeTasks', employeeTask);
   }
 
-  onClick(employeeTasks: EmployeeTask) {
-    this.setEmployeeTask(employeeTasks.userName,employeeTasks.taskName,employeeTasks.createdAt,employeeTasks.status,);
-    employeeTasks.btnshow = true;
-
-    console.log('onClick',employeeTasks);
+  onAddNewTask(allTasks: EmployeeTask) {
+    this.setEmployeeTask(allTasks.userName, allTasks.taskName, allTasks.createdAt, allTasks.status,true);
+    allTasks.taskInput = true;
   }
 
-  onEdit(employeeTasks: EmployeeTask){
-    employeeTasks.taskinput = true;
-    employeeTasks.btnsave = true;
-    employeeTasks.btnshow = false;
-
-
-  
-    console.log('onEdit',employeeTasks);
-
+  onEdit(employeeTasks: EmployeeTask) {
+    employeeTasks.taskInput = true;
+    employeeTasks.btnEdit = false;
+    employeeTasks.btnSave = true;
   }
-  onSave(employeeTasks: EmployeeTask){
-    employeeTasks.taskinput = false;
-    employeeTasks.btnsave = false;
-    employeeTasks.btnshow = true;
+
+  onSave(employeeTasks: EmployeeTask) {
+    employeeTasks.taskInput = false;
+    employeeTasks.btnEdit = true;
+    employeeTasks.btnSave = false;
 
   }
 
+  onCancel(employeeTasks: EmployeeTask){
+    employeeTasks.taskInput = false;
+    employeeTasks.btnSave = false;
+
+
+
+  }
 }
 
-
-
-
-    // console.log('onClick',employeeTask);
 
 
 

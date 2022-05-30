@@ -18,28 +18,25 @@
                 <td>{{data.id}}</td>
                 <td>{{data.userName}}</td>
                 <td>
-                    <span *ngIf="! data.taskinput">{{data.taskName}}</span>
-                    <span> <input [(ngModel)]="data.taskName" *ngIf="data.taskinput" type="text"> </span>
+                    <span *ngIf="!data.btnSave">{{data.taskName}}</span>
+                    <span> <input *ngIf="data.btnSave" type="text" placeholder="Enter Task Name"> </span>
                 </td>
-                <td>{{data.createdAt|date:'medium'}}</td>
+                <td>{{data.createdAt|date:'short'}}</td>
                 <td>
-                    <span>
-                        <select [(ngModel)]="data.status">
-                            <option  *ngFor="let option of Options" [selected]="option === data.status" [value]="option">
-                                {{ option }}
-                            </option>
-                        </select>
-                    </span>
-
+                    <select *ngIf="!data.btnSave" [(ngModel)]="data.status" >
+                        <option *ngFor="let option of Options" [selected]="option === data.status" [value]="option">
+                            {{option}}
+                        </option>
+                    </select>
+                    <span *ngIf="data.btnSave"> {{selected}}</span>
                 </td>
                 <td>
-                    <button  class="btn1" type="button" (click)="onClick(data)" >ASSIGN TASK</button>
-
-                    
+                    <button *ngIf="!data.btnSave" class="btn1" type="button" (click)="onAddNewTask(data)">Add NewTask</button>
                 </td>
                 <td>
-                    <button *ngIf="data.btnshow"  class="btn1" (click)="onEdit(data)">edit</button>
-                    <span *ngIf="data.btnsave"><button  class="btn1" (click)="onSave(data)">save</button></span>
+                    <button *ngIf="data.btnEdit" class="btn1" (click)="onEdit(data)">Edit</button>
+                    <span *ngIf="data.btnSave"><button class="btn1" (click)="onSave(data)">Save</button></span> &nbsp;
+                    <span *ngIf="data.btnSave"><button class="btn1" (click)="onCancel(data)">Cancel</button></span>
                 </td>
             </tr>
         </tbody>

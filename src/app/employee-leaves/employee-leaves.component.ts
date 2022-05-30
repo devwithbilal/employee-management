@@ -21,9 +21,9 @@ export class EmployeeLeavesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.setEmployeeLeaves("Bilal", 10, 25,true);
-    this.setEmployeeLeaves("Ali",5,25,false);
-    this.setEmployeeLeaves("Kashan", 15,25,false);
+    this.setEmployeeLeaves("Bilal",10,25);
+    this.setEmployeeLeaves("Ali",5,25);
+    this.setEmployeeLeaves("Kashan",15,25);
     // console.log("employeeLeave", this.employeeLeaves)
 
 
@@ -34,7 +34,7 @@ export class EmployeeLeavesComponent implements OnInit {
     // this.employeeLeaves.push(...myClonedArray)
   }
 
-  setEmployeeLeaves(userName: string, consumeLeaves: number, totalLeaves: number, isEdit: boolean){
+  setEmployeeLeaves(userName: string, consumeLeaves: number, totalLeaves: number){
     let employeeLeave : EmployeeLeaves = {
       consumeLeaves : consumeLeaves,
       totalLeaves : totalLeaves,

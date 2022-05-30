@@ -1,17 +1,11 @@
 export class EmployeeTask {
-
-
-
+    
     userName: string = "";
     taskName: string = "";
     createdAt: Date = new Date();
-    status: string= "";
+    status: string = "";
     id: number = 0;
-    taskinput: boolean = false;
-    btnshow: boolean = false;
-    btnsave: boolean = false;
-    
-
-    
-
+    taskInput: boolean = false;
+    btnEdit: boolean = false;
+    btnSave: boolean = false;
 }

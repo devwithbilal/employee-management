@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { data } from 'autoprefixer';
 import { count, identity } from 'rxjs';
 import { EmployeeLeaves } from '../core/models/employee-leaves';
@@ -23,8 +24,13 @@ export class EmployeeTaskComponent implements OnInit {
   createdAt: Date = new Date();
   Options: string[] = ["Assigned", "InProgress", "Hold", "Completed"];
   selected: string = "Assign";
+  clientForm : FormGroup | undefined;
+  formErrors = {
+    TaskName: '',
+  };
 
-  constructor() {
+  constructor(public form: FormBuilder) {
+    
   }
 
   ngOnInit(): void {
@@ -86,12 +92,18 @@ export class EmployeeTaskComponent implements OnInit {
       this.employeeTasks = this.employeeTasks.filter(x=>x.id !== employeeTask.id);
     }
   }
+
+  buildForm() {
+    this.clientForm = this.form.group({
+      TaskName: ['', [Validators.required]],
+    });
+    
 }
 
 
 
 
-
+}
 
 
 

@@ -19,7 +19,11 @@
                 <td>{{data.userName}}</td>
                 <td>
                     <span *ngIf="!data.isEdit">{{data.taskName}}</span>
-                    <span><input [(ngModel)]="data.taskName" *ngIf="data.isEdit || data.isNew" type="text" placeholder="Enter Task Name"> </span>
+                    
+                    <span><input  [(ngModel)]="data.taskName" *ngIf="data.isEdit || data.isNew"  type="text"   placeholder="Enter Task Name"  >
+                    <small  *ngIf="formErrors.TaskName" class="task">Last name is required</small>
+                    </span>
+                    
                 </td>
                 <td>{{data.createdAt|date:'short'}}</td>
                 <td>
@@ -34,7 +38,7 @@
                 <td>
                      <button *ngIf="data.isNew && !data.isEdit" class="btn1" (click)="onEdit(data)">Edit</button>
                     <span *ngIf="data.isEdit">
-                        <button class="btn1" (click)="onSave(data)">Save</button> &nbsp;
+                        <button class="btn1"  (click)="onSave(data)">Save</button> &nbsp;
                         <button class="btn1" (click)="onCancel(data)">Cancel</button>
                     </span>
                 </td>

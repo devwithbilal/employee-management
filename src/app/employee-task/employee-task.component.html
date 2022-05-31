@@ -28,7 +28,7 @@
                             {{option}}
                         </option>
                     </select>
-                    <span *ngIf="data.isNew"> {{selected}}</span>
+                    <span *ngIf="data.isNew">{{selected}}</span>
                 </td>
                 <td>
                     <button *ngIf="!data.isNew" class="btn1" type="button" (click)="onAddNewTask(data)">Add NewTask</button>

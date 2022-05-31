@@ -6,6 +6,7 @@
   display: flex;
   border-bottom: 2px solid black;
   z-index: 1;
+  box-shadow: 0px 4px 5px grey;
 }
 
 .div1 {
@@ -27,7 +28,6 @@
 }
 
 .innersidebar {
-
     width: 250px;
     height: 100%;
     position: absolute;
@@ -42,7 +42,7 @@ span#menu{
   padding: 5px;
   cursor: pointer;
   background-color: #dbdbdb;
-
+  box-shadow: 0px 0px 5px grey;
 }
 
 span#logout{
@@ -54,6 +54,7 @@ span#logout{
   background-color: #dbdbdb;
   width: 40px;
   margin-left: auto;
+  box-shadow: 0px 0px 5px grey;
 }
 
 

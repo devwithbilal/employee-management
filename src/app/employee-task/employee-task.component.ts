@@ -36,7 +36,7 @@ export class EmployeeTaskComponent implements OnInit {
   //  console.log("identity",this.indentity)
   }
 
-  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, isNew: boolean = false) {
+  setEmployeeTask(userName: string, taskName: string, createdAt: Date, status: string, isNew: boolean = false, isEdit: boolean = false) {
     let employeeTask: EmployeeData = {
       id: !isNew ? this.indentity : this.newIdentity,
       userName: userName,
@@ -44,14 +44,9 @@ export class EmployeeTaskComponent implements OnInit {
       createdAt: createdAt,
       status: status,
       isNew : isNew,
-      isEdit : false,
-
-      
-  
+      isEdit : isEdit,
     }
 
-    // const myObject = Object.assign({}, employeeTask);
-    // this.employeeTasks.push(myObject);
     this.employeeTasks.push(employeeTask);
     if(!isNew){
       this.indentity++;
@@ -63,38 +58,33 @@ export class EmployeeTaskComponent implements OnInit {
   }
 
   onAddNewTask(employeeTask: EmployeeData) {
-    this.setEmployeeTask(employeeTask.userName, employeeTask.taskName, new Date(), employeeTask.status,true);
+    this.setEmployeeTask(employeeTask.userName, "", new Date(), employeeTask.status,true,true);
 
   }
 
   onEdit(employeeTask: EmployeeData) {
-    employeeTask.isEdit = false;
-    employeeTask.isNew = true;
-
-
+    employeeTask.isEdit = true;
+    employeeTask.isNew = false;
   }
 
   onSave(employeeTask: EmployeeData) {
-    employeeTask.isEdit = true;
+    if(employeeTask.taskName === ''){
+      return;
+    }
+    employeeTask.isEdit = false;
     employeeTask.isNew = false;
-
-    
     if(employeeTask.id < 0){
       employeeTask.id = this.indentity;
       this.indentity++;
     }
-    
-
-
+    // console.log('employeeTask',employeeTask);
   }
 
   onCancel(employeeTask: EmployeeData){
     employeeTask.isEdit = false;
-    console.log("employeeTask",employeeTask)
-
-    this.employeeTasks = this.employeeTasks.filter(x=>x.id !== employeeTask.id);
-
-
+    if(employeeTask.id < 0){
+      this.employeeTasks = this.employeeTasks.filter(x=>x.id !== employeeTask.id);
+    }
   }
 }
 

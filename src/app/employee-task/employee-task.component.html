@@ -20,7 +20,7 @@
                 <td>
                     <span *ngIf="!data.isEdit">{{data.taskName}}</span>
                     
-                    <span><input  [(ngModel)]="data.taskName" *ngIf="data.isEdit || data.isNew"  type="text"   placeholder="Enter Task Name"  >
+                    <span><input [(ngModel)]="data.taskName" *ngIf="data.isEdit || data.isNew"  type="text"   placeholder="Enter Task Name"  >
                     <small  *ngIf="formErrors.TaskName" class="task">Last name is required</small>
                     </span>
                     

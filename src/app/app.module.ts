@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +16,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.component';
 import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.component';
 import { EmployeeTaskComponent } from './employee-task/employee-task.component';
+import { UserTableComponent } from './user-table/user-table.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EmployeeTaskComponent } from './employee-task/employee-task.component';
     EmployeeLeavesComponent,
     EmployeeForgotComponent,
     EmployeeTaskComponent,
+    UserTableComponent,
     ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { EmployeeTaskComponent } from './employee-task/employee-task.component';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     MatSliderModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ReactiveFormsModule
     
   ],
   providers: [],

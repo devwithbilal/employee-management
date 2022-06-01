@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms';
 import { data } from 'autoprefixer';
 import { count, identity } from 'rxjs';
 import { EmployeeLeaves } from '../core/models/employee-leaves';
@@ -8,6 +8,7 @@ import { EmployeeTask } from '../core/models/employee-task';
 interface EmployeeData extends EmployeeTask{
   isNew: boolean,
   isEdit: boolean,
+  // formControl: string
 
 }
 @Component({
@@ -16,7 +17,7 @@ interface EmployeeData extends EmployeeTask{
   styleUrls: ['./employee-task.component.css']
 })
 
-export class EmployeeTaskComponent implements OnInit {
+export class EmployeeTaskComponent  implements OnInit {
 
   employeeTasks: EmployeeData[] = [];
   indentity: number = 1;
@@ -24,10 +25,14 @@ export class EmployeeTaskComponent implements OnInit {
   createdAt: Date = new Date();
   Options: string[] = ["Assigned", "InProgress", "Hold", "Completed"];
   selected: string = "Assign";
-  clientForm : FormGroup | undefined;
-  formErrors = {
-    TaskName: '',
-  };
+  // clientForm: FormGroup = new FormGroup({
+  //   taskName: new FormControl('', Validators.required),
+  //   // TaskName: ['', Validators.required],
+  // });
+  // formErrors = {
+  //   TaskName: '',
+  // };
+
 
   constructor(public form: FormBuilder) {
     
@@ -38,7 +43,6 @@ export class EmployeeTaskComponent implements OnInit {
     this.setEmployeeTask('ALI', 'leaves task', this.createdAt, 'Assigned');
     this.setEmployeeTask('FURQAN', 'login task', this.createdAt, 'Hold');
     this.setEmployeeTask('JAMIL', 'form task', this.createdAt, 'Assigned');
-
   //  console.log("identity",this.indentity)
   }
 
@@ -51,16 +55,18 @@ export class EmployeeTaskComponent implements OnInit {
       status: status,
       isNew : isNew,
       isEdit : isEdit,
+      //formControl: "control-"+ (!isNew ? this.indentity : this.newIdentity)
     }
 
+    //this.clientForm.addControl(employeeTask.formControl,new FormControl('', Validators.required))
     this.employeeTasks.push(employeeTask);
     if(!isNew){
       this.indentity++;
     }else{
       this.newIdentity--;
     }
-    
-
+    //console.log("this.clientForm",this.clientForm)
+    console.log("this.employeeTasks",this.employeeTasks)
   }
 
   onAddNewTask(employeeTask: EmployeeData) {
@@ -70,7 +76,6 @@ export class EmployeeTaskComponent implements OnInit {
 
   onEdit(employeeTask: EmployeeData) {
     employeeTask.isEdit = true;
-    employeeTask.isNew = false;
   }
 
   onSave(employeeTask: EmployeeData) {
@@ -78,7 +83,6 @@ export class EmployeeTaskComponent implements OnInit {
       return;
     }
     employeeTask.isEdit = false;
-    employeeTask.isNew = false;
     if(employeeTask.id < 0){
       employeeTask.id = this.indentity;
       this.indentity++;
@@ -94,16 +98,19 @@ export class EmployeeTaskComponent implements OnInit {
   }
 
   buildForm() {
-    this.clientForm = this.form.group({
-      TaskName: ['', [Validators.required]],
-    });
-    
+    // this.clientForm = this.form.group({
+    //   taskName: ['', Validators.required],
+    // });
+  }
+
+
+
 }
 
 
 
 
-}
+
 
 
 

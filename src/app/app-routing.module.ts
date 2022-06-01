@@ -7,7 +7,7 @@ import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.compo
 import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.component';
 import { AuthenticationGuard } from './core/authentication/authentication.guard';
 import {EmployeeTaskComponent} from './employee-task/employee-task.component';
-
+import { UserTableComponent } from './user-table/user-table.component';
 
 
 const routes: Routes = [
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'employeeleaves', component: EmployeeLeavesComponent, canActivate: [AuthenticationGuard]},
   { path: 'employeeforgot', component: EmployeeForgotComponent},
   { path: 'employeetask', component: EmployeeTaskComponent, canActivate: [AuthenticationGuard]},
+  {path: 'usertable', component: UserTableComponent, canActivate: [AuthenticationGuard]},
 
   
   { path: '**', component: PageNotFoundComponent }

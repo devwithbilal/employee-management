@@ -1,5 +1,5 @@
 <div class="formcontainer">
-  <h2>LOGIN FORM</h2>
+  <h2>Login Form</h2>
   <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
     <div class="inputdiv">
       <input [ngClass]="[name.touched  ? 'touched-field' : 'untouched-field']"  type="text" minlength="3" required #name="ngModel" name="name" placeholder="User Name" ngModel>

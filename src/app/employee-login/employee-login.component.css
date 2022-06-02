@@ -19,7 +19,7 @@
   border-bottom: 2px solid red !important;
 }
 .untouched-field{
-    border-bottom: 1px solid rgb(179, 179, 179) !important;
+    border-bottom: 2px solid #6c6e71 !important;
 } 
 
 input{
@@ -44,7 +44,10 @@ h1{
 h2{
   text-align: center;
   font-size: 25px;
-  margin: 30px;
+  margin: 0px 0px 50px 0px;
+  border-bottom: 2px solid #6c6e71;
+  padding-bottom: 20px;
+  /* color: #6c6e71; */
 }
 span{
   margin-bottom:5px;

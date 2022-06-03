@@ -16,15 +16,23 @@
         color: unset;
 }
 tbody{
-    border-bottom: 0.50px solid gray !important;
+    border-bottom: 0.50px solid rgb(117, 122, 87) !important;
 }
+input{
+    border-radius: 5px;
+    border: 2px solid lightgray ;
+}
+
+input.ng-touched{
+    border: 2px solid red ;
+}
+
 input.ng-valid{
-    border: 2px solid blue;
+    border: 2px solid green ;
+
 }
-input.ng-invalid{
-    border: 2px solid red;
-}
-input.ng-submitted{
-    border: 2px solid green;
+
+input:focus{
+    outline: none;
 
 }

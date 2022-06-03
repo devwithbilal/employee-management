@@ -9,6 +9,14 @@
     box-shadow: 0px 0px 5px grey;
 
 }
+input.ng-untouched{
+    border-bottom: 2px solid red;
+
+}input.ng-dirty{
+    border-bottom: 2px solid red;
+
+}
+
 .mainsec{
     width: 1100px;
     margin: 20px auto 20px auto;

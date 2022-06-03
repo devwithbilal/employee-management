@@ -4,9 +4,8 @@
   width: 100%;
   padding: 15px;
   display: flex;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid gray;
   z-index: 1;
-  box-shadow: 0px 4px 5px grey;
 }
 
 .div1 {
@@ -34,7 +33,7 @@
     background-color: #e4e4e4;
     padding: 100px 25px 35px 25px;
     transition: 0.5s;
-    border-right: 2px solid black;
+    border-right: 2px solid gray;
     
 }
 span#menu{
@@ -42,7 +41,7 @@ span#menu{
   padding: 5px;
   cursor: pointer;
   background-color: #dbdbdb;
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: 1px 1px 2px grey;
 }
 
 span#logout{
@@ -54,7 +53,7 @@ span#logout{
   background-color: #dbdbdb;
   width: 40px;
   margin-left: auto;
-  box-shadow: 0px 0px 5px grey;
+  box-shadow: 1px 1px 2px grey;
 }
 
 

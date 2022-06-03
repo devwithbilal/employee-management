@@ -1,6 +1,6 @@
 import { SafeKeyedRead } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import {  FormBuilder, FormGroup, FormArray, Validators  } from '@angular/forms';
+import {  FormBuilder, FormGroup, FormArray, Validators, AbstractControl, FormControl  } from '@angular/forms';
 import { EmployeeTask } from '../core/models/employee-task';
 import { UserTable } from '../core/models/user-table';
 
@@ -19,7 +19,7 @@ export class UserTableComponent implements OnInit {
   userTables: userData [] = [];
   created: Date = new Date();
   identity: number = 0 ;
-  optionList: string[]= ['Assign','In-Progress','Hold','Completed'];
+  optionList: string[]= ['Assign','InProgress','Hold','Completed'];
   selected: string = "Assigning";
   userTable: FormGroup  = this.fb.group({
     tableRows: this.fb.array([])
@@ -43,48 +43,75 @@ export class UserTableComponent implements OnInit {
 
   addRow() {
     const control =  this.userTable.get('tableRows') as FormArray;
-    control.push(this.setuserTable('','',this.created,'Assign'));
+    control.push(this.setuserTable('','', new Date() , ''));
+ 
   }
 
-  setuserTable(userName:string,userTask: string, created: Date,status:string,isNew: boolean = false){ 
-    // let userTable : userData = {
 
-    //   id: this.identity,
-    //   userName: userName,
-    //   userTask: userTask,
-    //   created: created,
-    //   status: status,
-    //   isNew: isNew,
-    // }
-    // this.userTables.push(userTable);
-    // this.identity++;
+  setuserTable(userName:string,userTask: string, created: Date,status:string,isNew: boolean = true,isEdit: boolean = true){ 
+
     this.identity++;
     return this.fb.group({
       id: [this.identity],
-      userName: [userName, [Validators.required]],
-      userTask: [userTask],
+      userName: [userName, [Validators.required, Validators.minLength(5)]],
+      userTask: [userTask, [Validators.required]],
       created: [created],
       status: [status],
       isNew: [isNew],
+      isEdit:[isEdit]
+      // isEdit: [isEdit]
     });
   }
 
-  newTask(usertable:userData){
-    this.setuserTable(usertable.userName, usertable.userTask, new Date(), usertable.status, true)
+  onSave(group: any){
+    if(!group.valid){
+      return
+    }
+    group.controls['isEdit'].setValue(false);
+  }
+  onCancel(index: number) {
+    const control =  this.userTable.get('tableRows') as FormArray;
+    control.removeAt(index);
+
+  }
+
+  onEdit(group: any){
+    
+    group.controls['isEdit'].setValue(true);
+  }
+
+  newTask(controls:userData){
+    this.setuserTable(controls.userName, controls.userTask, new Date(), controls.status, true)
   }
 
   get getFormControls() {
     const control = this.userTable.get('tableRows') as FormArray;
-    console.log("control",control)
     return control;
   }
+
   submitForm(){
     const control = this.userTable.get('tableRows') as FormArray;
     this.touchedRows = control.controls.filter(row => row.touched).map(row => row.value);
     console.log(this.touchedRows);
   }
 
-
-
-
+  getGroupControls(group: any, fieldName: string) {
+    let value = group.controls[fieldName].value;
+    return value;
+  }
 }
+
+  // setuserData(userName:string,userTask: string, created: Date,status:string,isNew: boolean = false){ 
+  //   let userTable : userData = {
+
+  //     id: this.identity,
+  //     userName: userName,
+  //     userTask: userTask,
+  //     created: created,
+  //     status: status,
+  //     isNew: isNew,
+  //   }
+  //   this.userTables.push(userTable);
+  //   this.identity++;
+  //   this.identity++;
+  // }

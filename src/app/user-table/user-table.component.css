@@ -20,7 +20,7 @@ tbody{
 }
 input{
     border-radius: 5px;
-    border: 2px solid lightgray ;
+    border: 1px solid gray ;
 }
 
 input.ng-touched{
@@ -29,10 +29,9 @@ input.ng-touched{
 
 input.ng-valid{
     border: 2px solid green ;
-
 }
 
 input:focus{
     outline: none;
-
+    border: 1px solid black ;
 }

@@ -5,7 +5,7 @@ import { min } from 'rxjs';
 import { EmployeeLeaves } from '../core/models/employee-leaves';
 
 @Component({
-  selector: 'app-employee-leaves',
+  selector: 'employee-leaves',
   templateUrl: './employee-leaves.component.html',
   styleUrls: ['./employee-leaves.component.css']
 })

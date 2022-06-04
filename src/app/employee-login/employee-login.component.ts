@@ -24,7 +24,7 @@ export class EmployeeLoginComponent implements OnInit {
 
     if (this.IsLogin === true) {
       // console.log("this.router", this.router)
-      this.router.navigateByUrl("/employeeleaves");
+      this.router.navigateByUrl("/sidenav");
       // alert("You have been login Successfully")
     }
     else {

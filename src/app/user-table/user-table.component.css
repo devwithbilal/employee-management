@@ -1,3 +1,4 @@
+
 .userTable-container{
     width: 1100px;
     margin: 20px auto 20px auto;
@@ -5,6 +6,7 @@
     border-radius: 10px;
     box-shadow: 1px 1px 5px grey;
     background-color: navajowhite;
+
 } 
 
 .newtask{
@@ -15,14 +17,7 @@
         border: 2px solid lightgray;
         color: unset;
 }
-table{
-    height: 100px;
-    overflow: scroll;
-}
-tbody{
-    border-bottom: 0.50px solid rgb(117, 122, 87) !important;
-    
-}
+
 input{
     border-radius: 5px;
     border: 1px solid gray ;
@@ -42,10 +37,10 @@ input:focus{
 }
 
 .gray{
-    background-color: gray;
+    background-color: darkgray;
 
 }
 .white{
-    background-color: white;
+    background-color: lightgray;
 
 }

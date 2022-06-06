@@ -1,11 +1,18 @@
-
+.mat-typography {
+    height: 60px;
+    overflow: hidden;
+}
 .userTable-container{
     width: 1100px;
     margin: 20px auto 20px auto;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px grey;
-    background-color: navajowhite;
+    background-color: white;
+}
+.abcd{    
+    height: 500px;
+    overflow-y: scroll;
 
 } 
 
@@ -14,7 +21,7 @@
         background-color: #ffffff;
         border-radius: 5px;
         padding: 5px 15px 5px 15px;
-        border: 2px solid lightgray;
+        border: 2px solid darkgray;
         color: unset;
 }
 
@@ -37,7 +44,7 @@ input:focus{
 }
 
 .gray{
-    background-color: darkgray;
+    background-color: lightslategray;
 
 }
 .white{

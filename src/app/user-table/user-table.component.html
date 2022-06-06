@@ -1,89 +1,94 @@
 <sidenav></sidenav>
 <div class="userTable-container">
-    <form  [formGroup]="userTable">
+    <div>
         <button class="newtask" (click)="addRow()" > <strong>New Task</strong></button> &nbsp;
         <button type="submit" (click)="submitForm()" class="newtask"><strong>submit</strong></button>
+    </div>
+
+    <div class="abcd" >
+        <form  [formGroup]="userTable">
+            <table class="table">
+                <thead class="table-header">
+                    <tr>
+                    <td scope="col"><strong>ID</strong></td>
+                    <td scope="col"><strong>Username</strong></td>
+                    <td scope="col"><strong>Date</strong></td>
+                    <td scope="col"><strong>Taskname</strong></td>
+                    <td scope="col"><strong>Status</strong></td>
+                    <td scope="col"><strong>Action</strong></td>
+                    <!-- <td scope="col"><strong>Action</strong></td> -->
+                    </tr>
+                </thead>    
+                    <tbody>
+                            <ng-container formArrayName="tableRows"
+                            *ngFor="let group of getFormControls.controls; let i = index">
+                        <!-- *ngIf="group.get('isNew')?.value" -->
+                        <tr [formGroupName]="i" [ngClass]="getGroupControlsitem(group, 'id') == 1 ? 'gray' : 'white'">
+                            <td>{{getGroupControls(group, 'id')}}</td>
         
-        <table class="table">
-            <thead class="table-header">
-                <tr>
-                <td scope="col"><strong>ID</strong></td>
-                <td scope="col"><strong>Username</strong></td>
-                <td scope="col"><strong>Date</strong></td>
-                <td scope="col"><strong>Taskname</strong></td>
-                <td scope="col"><strong>Status</strong></td>
-                <td scope="col"><strong>Action</strong></td>
-                <!-- <td scope="col"><strong>Action</strong></td> -->
-                </tr>
-            </thead>
-            <tbody>
-                    <ng-container formArrayName="tableRows"
-                    *ngFor="let group of getFormControls.controls; let i = index">
-                <!-- *ngIf="group.get('isNew')?.value" -->
-                <tr [formGroupName]="i" [ngClass]="getGroupControlsitem(group, 'id') == 1 ? 'gray' : 'white'">
-                    <td>{{getGroupControls(group, 'id')}}</td>
-
-                    <td>
-                        <span *ngIf="getGroupControls(group, 'isEdit')">
-                            <input type="text" formControlName="userName"/>
-                        </span>
-                        <span *ngIf="!getGroupControls(group, 'isEdit')">
-                            {{getGroupControls(group, 'userName')}}
-                        </span>
-                    </td>
-
-                    <td>{{getGroupControls(group, 'created')| date: 'medium' }}</td>
-
-                    <td>
-                        <span *ngIf="getGroupControls(group, 'isEdit')">
-                            <input type="text" formControlName="userTask"/>
-                        </span>
-                        <span *ngIf="!getGroupControls(group, 'isEdit')">
-                            {{getGroupControls(group, 'userTask')}}
-                        </span>
-                    </td>
-
-                    <td>
-                        <select formControlName="status">
-                            <option *ngFor="let list of optionList" value="list">{{list}}</option>
-                        </select> 
-                    </td>
-                    <td >
-                        <button *ngIf="!getGroupControls(group, 'isEdit')" (click)="onEdit(group)"  class="newtask"><strong>Edit</strong></button> &nbsp;
-
-                        <button *ngIf="getGroupControls(group, 'isEdit')" (click)="onSave(group)" class="newtask"><strong>Save</strong></button> &nbsp;
-
-                        <button *ngIf="getGroupControls(group, 'isEdit')" (click)="onCancel(i)" class="newtask"><strong>Cancel</strong></button>
-                    </td>                    
-                </tr>
-               
-                <!-- <tr *ngFor="let user of userTables">
-                    <td><strong>{{user.id}})</strong></td>
-
-                    <td><strong>{{user.userName}}</strong></td>
-
-                    <td>{{user.created | date:'medium'}}</td>
-
-                    <td>{{user.userTask}}</td>
-
-                    <td>
-                        <select >
-                            <option *ngFor="let list of optionList" [selected]="list === user.status" value="list">{{list}}</option>
-                        </select>
-                    </td>
-
-                    <td>
-                        <button *ngIf="!user.isNew" class="newtask" (click)="newTask(user)" > <strong>New Task</strong></button> &nbsp;
-                        <button *ngIf="user.isNew" class="newtask"><strong>Edit</strong></button>
-                        <span>
-                            <button class="newtask"><strong>Save</strong></button> &nbsp;
-                            <button class="newtask"><strong>Cancel</strong></button>
-                        </span>
-                    </td>
-                </tr> -->
-                </ng-container>                
-            </tbody>
-        </table>
+                            <td>
+                                <span *ngIf="getGroupControls(group, 'isEdit')">
+                                    <input type="text" formControlName="userName"/>
+                                </span>
+                                <span *ngIf="!getGroupControls(group, 'isEdit')">
+                                    {{getGroupControls(group, 'userName')}}
+                                </span>
+                            </td>
         
-    </form>
+                            <td>{{getGroupControls(group, 'created')| date: 'medium' }}</td>
+        
+                            <td>
+                                <span *ngIf="getGroupControls(group, 'isEdit')">
+                                    <input type="text" formControlName="userTask"/>
+                                </span>
+                                <span *ngIf="!getGroupControls(group, 'isEdit')">
+                                    {{getGroupControls(group, 'userTask')}}
+                                </span>
+                            </td>
+        
+                            <td>
+                                <select formControlName="status">
+                                    <option *ngFor="let list of optionList" value="list">{{list}}</option>
+                                </select> 
+                            </td>
+                            <td >
+                                <button *ngIf="!getGroupControls(group, 'isEdit')" (click)="onEdit(group)"  class="newtask"><strong>Edit</strong></button> &nbsp;
+        
+                                <button *ngIf="getGroupControls(group, 'isEdit')" (click)="onSave(group)" class="newtask"><strong>Save</strong></button> &nbsp;
+        
+                                <button *ngIf="getGroupControls(group, 'isEdit')" (click)="onCancel(i)" class="newtask"><strong>Cancel</strong></button>
+                            </td>                    
+                        </tr>
+                       
+                        <!-- <tr *ngFor="let user of userTables">
+                            <td><strong>{{user.id}})</strong></td>
+        
+                            <td><strong>{{user.userName}}</strong></td>
+        
+                            <td>{{user.created | date:'medium'}}</td>
+        
+                            <td>{{user.userTask}}</td>
+        
+                            <td>
+                                <select >
+                                    <option *ngFor="let list of optionList" [selected]="list === user.status" value="list">{{list}}</option>
+                                </select>
+                            </td>
+        
+                            <td>
+                                <button *ngIf="!user.isNew" class="newtask" (click)="newTask(user)" > <strong>New Task</strong></button> &nbsp;
+                                <button *ngIf="user.isNew" class="newtask"><strong>Edit</strong></button>
+                                <span>
+                                    <button class="newtask"><strong>Save</strong></button> &nbsp;
+                                    <button class="newtask"><strong>Cancel</strong></button>
+                                </span>
+                            </td>
+                        </tr> -->
+                        </ng-container>                
+                    </tbody>
+            </table>
+            
+        </form>
+    </div>
 </div>
+

@@ -87,3 +87,19 @@ a {
   border-color: #f9fafb;
   background-color: #212529;
 }
+@media only screen and (max-width: 600px) {
+  H1 {
+    font-size: 18px;
+  }
+  .div1 {
+    width: 10%;
+  }
+  
+  .div2 {
+    width: 80%;
+  }
+  
+  .div3 {
+    width: 10%;
+  }
+}

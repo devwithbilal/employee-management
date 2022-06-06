@@ -15,8 +15,13 @@
         border: 2px solid lightgray;
         color: unset;
 }
+table{
+    height: 100px;
+    overflow: scroll;
+}
 tbody{
     border-bottom: 0.50px solid rgb(117, 122, 87) !important;
+    
 }
 input{
     border-radius: 5px;
@@ -34,4 +39,13 @@ input.ng-valid{
 input:focus{
     outline: none;
     border: 1px solid black ;
+}
+
+.gray{
+    background-color: gray;
+
+}
+.white{
+    background-color: white;
+
 }

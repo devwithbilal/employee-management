@@ -20,7 +20,7 @@
                 <ng-container formArrayName="tableRows"
                     *ngFor="let group of getFormControls.controls; let i = index">
                 <!-- *ngIf="group.get('isNew')?.value" -->
-                <tr [formGroupName]="i">
+                <tr [formGroupName]="i" [ngClass]="getGroupControlsitem(group, 'id') == 1 ? 'gray' : 'white'">
                     <td>{{getGroupControls(group, 'id')}}</td>
 
                     <td>

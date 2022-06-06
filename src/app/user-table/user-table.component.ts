@@ -61,7 +61,9 @@ export class UserTableComponent implements OnInit {
       isEdit:[isEdit]
       // isEdit: [isEdit]
     });
+
   }
+  
 
   onSave(group: any){
     if(!group.valid){
@@ -98,6 +100,11 @@ export class UserTableComponent implements OnInit {
   getGroupControls(group: any, fieldName: string) {
     let value = group.controls[fieldName].value;
     return value;
+  }
+
+  getGroupControlsitem(group: any, fieldName: string) {
+    let value = group.controls[fieldName].value;
+    return value %2;
   }
 }
 

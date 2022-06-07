@@ -15,6 +15,10 @@
     overflow-y: scroll;
 
 } 
+.cdef{
+    margin: 15px;
+
+}
 
 .newtask{
         border: 0px;

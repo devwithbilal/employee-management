@@ -17,6 +17,8 @@ import { EmployeeLeavesComponent } from './employee-leaves/employee-leaves.compo
 import { EmployeeForgotComponent } from './employee-forgot/employee-forgot.component';
 import { EmployeeTaskComponent } from './employee-task/employee-task.component';
 import { UserTableComponent } from './user-table/user-table.component';
+import { LoginComponent } from './Account/login/login.component';
+import { RegisterComponent } from './Account/register/register.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { UserTableComponent } from './user-table/user-table.component';
     EmployeeForgotComponent,
     EmployeeTaskComponent,
     UserTableComponent,
+    LoginComponent,
+    RegisterComponent,
     ],
   imports: [
     BrowserModule,

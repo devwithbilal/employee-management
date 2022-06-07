@@ -1,1 +1,42 @@
-<p>register works!</p>
+<!-- <div>
+    <form [formGroup]="">
+        <div>
+            <input type="text"  >
+        </div>
+        <div>
+            <input type="text">
+        </div>
+        <div>
+            <input type="text">
+        </div>
+        <div>
+            <input type="text">
+        </div>
+        <div>
+            <input type="text">
+        </div>
+    </form>
+</div> -->
+
+
+  
+      <form class="example-form">
+  
+        <div>
+            <input  placeholder="Username">
+  
+            <input  placeholder="Email">
+  
+            <input  placeholder="Password">
+  
+            <label>Choose a role...</label>
+            <select>
+              <option [value]="roles" *ngFor="let roles of Roles">{{roles}}
+              </option>
+            </select>
+  
+        </div>
+  
+        <button mat-stroked-button color="accent" class="btn-block">Register</button>
+  
+      </form>

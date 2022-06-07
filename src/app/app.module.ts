@@ -19,6 +19,7 @@ import { EmployeeTaskComponent } from './employee-task/employee-task.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { LoginComponent } from './Account/login/login.component';
 import { RegisterComponent } from './Account/register/register.component';
+import { ValidateEqualModule } from 'ng-validate-equal';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { RegisterComponent } from './Account/register/register.component';
     MatSlideToggleModule,
     MatSliderModule,
     MatSidenavModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ValidateEqualModule
     
   ],
   providers: [],

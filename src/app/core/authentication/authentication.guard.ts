@@ -22,7 +22,8 @@ export class AuthenticationGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-    console.log("localStorage.getItem('login')",localStorage.getItem('login'))
+    // console.log("localStorage.getItem('login')",localStorage.getItem('login'))
+
     if (localStorage.getItem('login')) {
       return true;
     }

@@ -14,27 +14,30 @@
                 name</span>
         </div>
         <div class="inputdiv">
-            <input type="email" minlength="3" required #email="ngModel" name="email" placeholder="Enter your E-mail" ngModel>
-        <span *ngIf="email.invalid && email.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;"> please enter atleast 3 character with your valid
+            <input type="email" minlength="3" required #name="ngModel" name="name" placeholder="Enter your UserName" ngModel>
+        <span *ngIf="name.invalid && name.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;"> please enter atleast 5 character with your valid
             name </span>
         </div>
         <div class="inputdiv">
-            <input type="password" minlength="3"  required #password="ngModel" name="password"
-            placeholder="Enter your Password" ngModel>
-        <span *ngIf="password.invalid && password.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with
-            your
-            valid password</span>
+            <input type="password" minlength="5" name="password"  required #password="ngModel"  placeholder="Enter your Password" ngModel>
+        <span *ngIf="password.invalid && password.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 5 character with your valid password</span>
         </div>
         <div class="inputdiv">
-            <input type="password" minlength="3" areequal="password" required #confirmpassword="ngModel" name="confirmpassword"
-            placeholder="Re-enter your Password" ngModel>
-        <span *ngIf="confirmpassword.invalid && confirmpassword.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with
-            your valid password</span>
+            <input type="password" minlength="5" name="confirmpassword" ngValidateEqual="password" required #confirmpassword="ngModel" placeholder="Re-enter your Password" ngModel>
+        <span *ngIf="confirmpassword.hasError('notEqual') && confirmpassword.invalid && confirmpassword.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">Password Is Not Valid</span>
+            <!-- <p *ngIf="confirmpassword.hasError('notEqual') ">
+                Passwords Don't Match
+              </p> -->
         </div>
+        <!-- <div>
+            <select name="" id="">
+                <option *ngFor="let role of designation" value="role">{{role}}</option>
+            </select>
+        </div> -->
         <section>
-            <button class="btn btn-outline-dark" [disabled]="registerform.invalid" type="submit">REGISTER</button>
+            <button class="btn btn-dark" [disabled]="registerform.invalid" type="submit">REGISTER</button>
             <button class="btn btn-outline-dark" type="reset" value="reset">RESET</button>
-            <a class="btn btn-dark" routerLink="/employeelogin" routerLinkActive="active">LOGIN</a>
+            <a class="btn btn-outline-dark" routerLink="/employeelogin" routerLinkActive="active">LOGIN</a>
         </section>
     </form>
 </div>

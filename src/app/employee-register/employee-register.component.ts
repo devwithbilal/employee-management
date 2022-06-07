@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../Auth.service';
+import { User } from '../core/models/user';
 
 @Component({
   selector: 'employee-register',
@@ -8,9 +9,10 @@ import { AuthService } from '../Auth.service';
 })
 
 export class EmployeeRegisterComponent implements OnInit {
+  designation: string[]=[ 'Admin','Manager','Employee']
 
-
-
+  users : User[] = [];
+  accessUsersKey: string = "registerUser";
   constructor(private auth:AuthService) { }
 
   ngOnInit(): void {
@@ -20,7 +22,7 @@ export class EmployeeRegisterComponent implements OnInit {
 
   registerUser(data:any){
 
-    this.auth.register(data.yname , data.password);
+    this.auth.register(data.name , data.password);
       console.log(this.auth.users);
       alert(" you have been registered")
       

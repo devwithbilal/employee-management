@@ -1,22 +1,26 @@
-<div class="formcontainer">
-  <h2>Login Form</h2>
-  <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
-    <div class="inputdiv">
-      <input   type="text" minlength="3" required #name="ngModel" name="name" placeholder="User Name" ngModel>
-      <span *ngIf="name.invalid && name.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with your valid
-        name</span>
-    </div>    
-    <div class="inputdiv">
-      <input  type="password" minlength="3" required #password="ngModel" name="password" placeholder="Password"
-        ngModel>
-      <span *ngIf="password.invalid && password.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with your
-        valid password</span>
-    </div>    
-    <section>
-      <button class="btn btn-dark"  [disabled]="loginForm.invalid" type="submit">LOGIN</button>
-      &nbsp;
-      &nbsp;
-      <a class="btn btn-outline-dark" routerLink="/employeeregister" routerLinkActive="active">Registration Form</a>
-    </section>
-  </form>
-</div>
+<!-- <div class="bg-danger">
+  <img src="https://miro.medium.com/max/1400/1*M_XOnlAT7CEkkhedW7kZEg.jpeg" alt=""  width="100%" height="800px"> -->
+  <div class="formcontainer">
+    <h2>Login Form</h2>
+    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+      <div class="inputdiv">
+        <input   type="text" minlength="3" required #name="ngModel" name="name" placeholder="User Name" ngModel>
+        <span *ngIf="name.invalid && name.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with your valid
+          name</span>
+      </div>    
+      <div class="inputdiv">
+        <input  type="password" minlength="3" required #password="ngModel" name="password" placeholder="Password"
+          ngModel>
+        <span *ngIf="password.invalid && password.touched" style="color: red; display: flex; justify-content: center; padding: 5px 0px 0px 0px;">please enter atleast 3 character with your
+          valid password</span>
+      </div>    
+      <section>
+        <button class="btn btn-dark"  [disabled]="loginForm.invalid" type="submit">LOGIN</button>
+        &nbsp;
+        &nbsp;
+        <a class="btn btn-outline-dark" routerLink="/employeeregister" routerLinkActive="active">Registration Form</a>
+      </section>
+    </form>
+  </div>
+  
+<!-- </div> -->

@@ -10,7 +10,7 @@ import { User } from '../core/models/user';
 
 export class EmployeeRegisterComponent implements OnInit {
   designation: string[]=[ 'Admin','Manager','Employee']
-
+  // emailPattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   users : User[] = [];
   accessUsersKey: string = "registerUser";
   constructor(private auth:AuthService) { }

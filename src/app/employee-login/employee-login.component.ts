@@ -32,7 +32,4 @@ export class EmployeeLoginComponent implements OnInit {
       alert(" Login Failed")
     }
   }
-
-
-
 }

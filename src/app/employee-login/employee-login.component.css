@@ -15,16 +15,12 @@
 .inputdiv{
   margin: 15px 0px 20px 0px;
 }
-/* input.ng-untouched{
-  border-bottom: 2px solid red !important;
-}
-.untouched-field{
-    border-bottom: 2px solid #6c6e71 !important;
-}  */
+
 
 input:focus{
   outline: none;
 }
+
 
 
 input.ng-valid{

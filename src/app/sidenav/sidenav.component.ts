@@ -20,11 +20,12 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
-Logout() {
-    localStorage.clear();
+  logout() {
+    //localStorage.clear();
+    localStorage.removeItem("login");
     this.router.navigateByUrl("/employeelogin");
-}
+  }
+
 
 
 

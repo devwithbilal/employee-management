@@ -8,16 +8,30 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 1px 1px 5px grey;
-    background-color: white;
+    background-color: lightgray;
 }
 .abcd{    
     height: 500px;
-    overflow-y: scroll;
-
+    overflow-y: scroll
 } 
+
+.abcd::-webkit-scrollbar-track
+{
+	background-color: lightgrey;
+}
+
+.abcd::-webkit-scrollbar
+{
+	width: 8px;
+}
+
+.abcd::-webkit-scrollbar-thumb
+{
+	background-color: #838383;
+}
+
 .cdef{
     margin: 15px;
-
 }
 
 .newtask{
@@ -48,10 +62,8 @@ input:focus{
 }
 
 .gray{
-    background-color: lightslategray;
-
+    background-color: #b5b5b5;
 }
 .white{
-    background-color: lightgray;
-
+    background-color: gray;
 }

@@ -1,8 +1,4 @@
-.mat-typography {
-    height: 60px;
-    overflow: hidden;
-}
-.userTable-container{
+.userTable-container {
     width: 1100px;
     margin: 20px auto 20px auto;
     padding: 20px;
@@ -10,60 +6,62 @@
     box-shadow: 1px 1px 5px grey;
     background-color: lightgray;
 }
-.abcd{    
+
+.abcd {
     height: 500px;
     overflow-y: scroll
-} 
-
-.abcd::-webkit-scrollbar-track
-{
-	background-color: lightgrey;
 }
 
-.abcd::-webkit-scrollbar
-{
-	width: 8px;
+.abcd::-webkit-scrollbar-track {
+    background-color: lightgrey;
+
 }
 
-.abcd::-webkit-scrollbar-thumb
-{
-	background-color: #838383;
+.abcd::-webkit-scrollbar {
+    width: 8px;
+
 }
 
-.cdef{
+.abcd::-webkit-scrollbar-thumb {
+    background-color: #838383;
+    border-radius: 4px;
+}
+
+.cdef {
     margin: 15px;
 }
 
-.newtask{
-        border: 0px;
-        background-color: #ffffff;
-        border-radius: 5px;
-        padding: 5px 15px 5px 15px;
-        border: 2px solid darkgray;
-        color: unset;
-}
-
-input{
+.newtask {
+    border: 0px;
+    background-color: #ffffff;
     border-radius: 5px;
-    border: 1px solid gray ;
+    padding: 5px 15px 5px 15px;
+    border: 2px solid darkgray;
+    color: unset;
 }
 
-input.ng-touched{
-    border: 2px solid red ;
+input {
+    border-radius: 5px;
+    border: 1px solid gray;
 }
 
-input.ng-valid{
-    border: 2px solid green ;
+input.ng-touched {
+    border: 2px solid red;
 }
 
-input:focus{
+input.ng-valid {
+    border: 2px solid green;
+}
+
+input:focus {
     outline: none;
-    border: 1px solid black ;
+    border: 1px solid black;
 }
 
-.gray{
+.gray {
     background-color: #b5b5b5;
 }
-.white{
+
+.white {
     background-color: gray;
 }
